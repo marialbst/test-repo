@@ -41,7 +41,7 @@ namespace _04.Files
                 foreach (var file in root.Value.OrderByDescending(x => x.Value).ThenBy(x => x.Key))
                 {
                    
-                    if (file.Key.Contains(extention))
+                    if (file.Key.Contains($".{extention}"))
                     {
                         contains = true;
                         Console.WriteLine($"{file.Key} - {file.Value} KB");
