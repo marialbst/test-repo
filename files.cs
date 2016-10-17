@@ -9,7 +9,7 @@ namespace _04.Files
         static void Main(string[] args)
         {
             int n = int.Parse(Console.ReadLine());
-            Dictionary<string, Dictionary<string, ulong>> fileDirectory = new Dictionary<string, Dictionary<string, ulong>>();
+            Dictionary<string, Dictionary<string, long>> fileDirectory = new Dictionary<string, Dictionary<string, long>>();
 
             for (int i = 0; i < n; i++)
             {
@@ -17,10 +17,10 @@ namespace _04.Files
                 string rootDir = path[0];
                 string[] fileInfo = path[path.Length - 1].Split(new char[] { ';'}, StringSplitOptions.RemoveEmptyEntries);
                 string file = fileInfo[0];
-                ulong size = ulong.Parse(fileInfo[fileInfo.Length-1]);
+                long size = long.Parse(fileInfo[fileInfo.Length-1]);
                 if (!fileDirectory.ContainsKey(rootDir))
                 {
-                    fileDirectory.Add(rootDir, new Dictionary<string, ulong>());
+                    fileDirectory.Add(rootDir, new Dictionary<string, long>());
                 }
 
                 if (!fileDirectory[rootDir].ContainsKey(file))
