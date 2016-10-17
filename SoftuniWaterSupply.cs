@@ -9,12 +9,12 @@ namespace _02.SoftuniWaterSupplies
         static void Main(string[] args)
         {
             long waterAvailable = long.Parse(Console.ReadLine());
-            List<double> bottles = Console.ReadLine().Split(' ').Select(double.Parse).ToList();
+            List<decimal> bottles = Console.ReadLine().Split(' ').Select(decimal.Parse).ToList();
             long bottlesCapacity = long.Parse(Console.ReadLine());
 
-            double waterInBottles = bottles.Sum();
-            double initial = waterAvailable;
-            double neededWater = bottlesCapacity * bottles.Count - waterInBottles;
+            decimal waterInBottles = bottles.Sum();
+            decimal initial = waterAvailable;
+            decimal neededWater = bottlesCapacity * bottles.Count - waterInBottles;
             //проверявам дали водата, която имам е достатъчна, за да остане
             if (waterAvailable >= neededWater)
             {
@@ -40,11 +40,11 @@ namespace _02.SoftuniWaterSupplies
             }
         }
 
-        private static void FillBottlesForEvenQuantity(List<double> bottles, long bottlesCapacity, ref double initial, ref long counter)
+        private static void FillBottlesForEvenQuantity(List<decimal> bottles, long bottlesCapacity, ref decimal initial, ref long counter)
         {
-            for (int i = 0; i > bottles.Count; i++)
+            for (int i = 0; i < bottles.Count; i++)
             {
-                double needed = bottlesCapacity - bottles[i];
+                decimal needed = bottlesCapacity - bottles[i];
 
                 if (initial < needed)
                 {
@@ -62,22 +62,15 @@ namespace _02.SoftuniWaterSupplies
             Console.Write("With indexes: ");
             for (long i = 0; i < bottles.Count - counter; i++)
             {
-                if (i == bottles.Count - counter - 1)
-                {
-                    Console.Write("{0}", i);
-                }
-                else
-                {
-                    Console.Write("{0}, ", i);
-                }
+                Console.Write(i == bottles.Count - counter - 1 ? "{0}" : "{0}, ", i);
             }
         }
 
-        private static void FillBottlesForOddQuantity(List<double> bottles, long bottlesCapacity, ref double initial, ref long counter)
+        private static void FillBottlesForOddQuantity(List<decimal> bottles, long bottlesCapacity, ref decimal initial, ref long counter)
         {
             for (int i = bottles.Count - 1; i >= 0; i--)
             {
-                double needed = bottlesCapacity - bottles[i];
+                decimal needed = bottlesCapacity - bottles[i];
 
                 if (initial < needed)
                 {
@@ -97,14 +90,7 @@ namespace _02.SoftuniWaterSupplies
 
             for (long i = (bottles.Count - counter - 1); i >= 0; i--)
             {
-                if (i == 0)
-                {
-                    Console.Write("{0}", i);
-                }
-                else
-                {
-                    Console.Write("{0}, ", i);
-                }
+                Console.Write(i == 0 ? "{0}" : "{0}, ", i);
             }
         }
     }
