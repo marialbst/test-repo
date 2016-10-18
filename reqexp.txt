@@ -1,15 +1,15 @@
 regular expressions
 
-[] - matches any character inside(един след друг се слагат, без интервали)
+[] - matches any character inside(ГҐГ¤ГЁГ­ Г±Г«ГҐГ¤ Г¤Г°ГіГЈ Г±ГҐ Г±Г«Г ГЈГ ГІ, ГЎГҐГ§ ГЁГ­ГІГҐГ°ГўГ Г«ГЁ)
 [^] - matches any character, that is not inside
 [0-9]- matches range
-[^0-9]-обратното
+[^0-9]-РѕР±СЂР°С‚РЅРѕС‚Рѕ
 \w = [a-zA-Z0-9_]
 \W = [^a-zA-Z0-9_]
 \d = [0-9]
-\s – Matches any white-space character
-\S – Matches any non-white-space character (opposite of \s)
-\d – Matches any decimal digit
+\s вЂ“ Matches any white-space character
+\S вЂ“ Matches any non-white-space character (opposite of \s)
+\d вЂ“ Matches any decimal digit
 * - Matches the previous element zero or more times \+\d*
 + - Matches the previous element one or more times \+\d+
 ? - Matches the previous element zero or one time \+\d?
@@ -27,9 +27,10 @@ ex. ^\w{6,12}$ - maches dumi ot 6 do 12 simwola
 \b boundary of word
 (subexpression) - captures the matched subexpression and assigns it a number \d{2}-(\w{3})-\d{4} 
 (?<name>subexpression) - Captures the matched subexpression into a named group  \d{2}-(?<month>\w{3})-\d{4}
-(?:subexpression) – Defines a non-capturing group ^(?:Hi|hello),\s*(\w+)$
-\number – matches the value of a numbered subexpression \d{2}(-|\/)\d{2}\1\d{4}
-\k<name> – matches the value of a named expression \d{2}(?<del>-|\/)\d{2}\k<del>\d{4}
+(?:subexpression) вЂ“ Defines a non-capturing group ^(?:Hi|hello),\s*(\w+)$
+\number вЂ“ matches the value of a numbered subexpression \d{2}(-|\/)\d{2}\1\d{4}
+\k<name> вЂ“ matches the value of a named expression \d{2}(?<del>-|\/)\d{2}\k<del>\d{4}
+
 
 
 Match ALL of these
@@ -40,5 +41,5 @@ Match NONE of these
 +359 2-222-2222, +359-2-222-222, +359-2-222-22222
 
 
-1.Вариант - \+\d{3}( |-)\d\1\d{3}\1\d{4}\b
-2.Вариант - \+\d{3}( \d \d{3} |-\d-\d{3}-)\d{4}\b
+1.РІР°СЂРёР°РЅС‚ - \+\d{3}( |-)\d\1\d{3}\1\d{4}\b
+2.РІР°СЂРёР°РЅС‚ - \+\d{3}( \d \d{3} |-\d-\d{3}-)\d{4}\b
