@@ -9,7 +9,6 @@ regular expressions
 \d = [0-9]
 \s – Matches any white-space character
 \S – Matches any non-white-space character (opposite of \s)
-\d – Matches any decimal digit
 * - Matches the previous element zero or more times \+\d*
 + - Matches the previous element one or more times \+\d+
 ? - Matches the previous element zero or one time \+\d?
@@ -20,7 +19,6 @@ escapes Name:\t\w+\nPhone:\s*\+\d+
 {min,}
 {min,max}
 | - or
-
 ^ - The match must start at the beginning of the string or line anchors
 $ - The match must occur at the end of the string or before \n anchors
 ex. ^\w{6,12}$ - maches dumi ot 6 do 12 simwola
@@ -31,15 +29,19 @@ ex. ^\w{6,12}$ - maches dumi ot 6 do 12 simwola
 \number – matches the value of a numbered subexpression \d{2}(-|\/)\d{2}\1\d{4}
 \k<name> – matches the value of a named expression \d{2}(?<del>-|\/)\d{2}\k<del>\d{4}
 
+5.Задача от упражненията
+Match ALL of these
+Ivan Ivanov
+Match NONE of these
+ivan ivanov, Ivan ivanov, ivan Ivanov, IVan Ivanov, Ivan IvAnov, Ivan	Ivanov
+\b[A-Z][a-z]+ [A-Z][a-z]+\b
 
-
+6.Задача от упражненията
 Match ALL of these
 +359 2 222 2222
 +359-2-222-2222
 Match NONE of these
 359-2-222-2222, +359/2/222/2222, +359-2 222 2222
 +359 2-222-2222, +359-2-222-222, +359-2-222-22222
-
-
 1.вариант - \+\d{3}( |-)\d\1\d{3}\1\d{4}\b
 2.вариант - \+\d{3}( \d \d{3} |-\d-\d{3}-)\d{4}\b
