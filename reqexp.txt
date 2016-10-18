@@ -7,6 +7,7 @@ regular expressions
 \w = [a-zA-Z0-9_]
 \W = [^a-zA-Z0-9_]
 \d = [0-9]
+\D= [^0-9]
 \s – Matches any white-space character
 \S – Matches any non-white-space character (opposite of \s)
 * - Matches the previous element zero or more times \+\d*
