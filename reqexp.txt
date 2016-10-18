@@ -1,0 +1,44 @@
+regular expressions
+
+[] - matches any character inside(един след друг се слагат, без интервали)
+[^] - matches any character, that is not inside
+[0-9]- matches range
+[^0-9]-обратното
+\w = [a-zA-Z0-9_]
+\W = [^a-zA-Z0-9_]
+\d = [0-9]
+\s Ц Matches any white-space character
+\S Ц Matches any non-white-space character (opposite of \s)
+\d Ц Matches any decimal digit
+* - Matches the previous element zero or more times \+\d*
++ - Matches the previous element one or more times \+\d+
+? - Matches the previous element zero or one time \+\d?
+escapes Name:\t\w+\nPhone:\s*\+\d+
+\t - tab  
+\n - new line
+{num}
+{min,}
+{min,max}
+| - or
+
+^ - The match must start at the beginning of the string or line anchors
+$ - The match must occur at the end of the string or before \n anchors
+ex. ^\w{6,12}$ - maches dumi ot 6 do 12 simwola
+\b boundary of word
+(subexpression) - captures the matched subexpression and assigns it a number \d{2}-(\w{3})-\d{4} 
+(?<name>subexpression) - Captures the matched subexpression into a named group  \d{2}-(?<month>\w{3})-\d{4}
+(?:subexpression) Ц Defines a non-capturing group ^(?:Hi|hello),\s*(\w+)$
+\number Ц matches the value of a numbered subexpression \d{2}(-|\/)\d{2}\1\d{4}
+\k<name> Ц matches the value of a named expression \d{2}(?<del>-|\/)\d{2}\k<del>\d{4}
+
+
+Match ALL of these
++359 2 222 2222
++359-2-222-2222
+Match NONE of these
+359-2-222-2222, +359/2/222/2222, +359-2 222 2222
++359 2-222-2222, +359-2-222-222, +359-2-222-22222
+
+
+1.¬ариант - \+\d{3}( |-)\d\1\d{3}\1\d{4}\b
+2.¬ариант - \+\d{3}( \d \d{3} |-\d-\d{3}-)\d{4}\b
