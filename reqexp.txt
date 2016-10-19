@@ -1,6 +1,6 @@
 regular expressions
 
-[] - matches any character inside(åäèí ñëåä äðóã ñå ñëàãàò, áåç èíòåðâàëè)
+[] - matches any character inside
 [^] - matches any character, that is not inside
 [0-9]- matches range
 [^0-9]-обратното
@@ -29,6 +29,20 @@ ex. ^\w{6,12}$ - maches dumi ot 6 do 12 simwola
 (?:subexpression) – Defines a non-capturing group ^(?:Hi|hello),\s*(\w+)$
 \number – matches the value of a numbered subexpression \d{2}(-|\/)\d{2}\1\d{4}
 \k<name> – matches the value of a named expression \d{2}(?<del>-|\/)\d{2}\k<del>\d{4}
+
+LOOKAROUNDS
+(?!someexp) - negative lookahed
+(?=someexp) - positive lookahead
+(?<=someexp) - positive lookbehind
+(?<!someexp) - nagative lookbehind
+
+examples:
+q(?!u) -  match a q not followed by a u, MATCHES Q IN IRAQ, NOT MACHES Q IN QUIT
+q(?=u) - matches a q that is followed by a u, without making the u part of the match NOT MATCHES Q IN IRAQ, MACHES Q IN QUIT
+(?<!a)b - matches a "b" that is not preceded by an "a" It doesn't match cab, but matches the b (and only the b) in bed or debt. 
+(?<=a)b - matches a "b" that is preceded by an "a", without making the a part of the match. matches the b (and only the b) in cab, but does not match bed or debt.
+
+
 
 5.Задача от упражненията
 Match ALL of these
